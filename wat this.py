@@ -4,7 +4,7 @@ third = 789
 
 if first==second==third:
     print(3)
-elif first==second==third:
+elif first==second and second==third:
     print(2)
 else:
     print(0)
@@ -15,5 +15,7 @@ second = 69
 third = 42
 if first==second==third:
     print(3)
-elif first==third:
+elif first==second or first==third:
     print(2)
+else:
+    print(0)
