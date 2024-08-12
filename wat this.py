@@ -1,20 +1,19 @@
-first = 123
-second = 456
-third = 789
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+primes = []
+not_primes = []
+for i in numbers:
+    is_prime = True
+    if i == 1:
+        continue
+    for j in range(2, i):
+        if i % j == 0:
+            is_prime = False
+            break
+    if is_prime:
+        primes.append(i)
+    else:
+        not_primes.append(i)
 
-if first == second == third:
-    print(3)
-elif first == third or second == third or third == first:
-    print(2)
-else:
-    print(0)
 
-first = 42
-second = 69
-third = 42
-if first == second == third:
-    print(3)
-elif third == first or second == third or first == third:
-    print(2)
-else:
-    print(0)
+print('Primes:', primes)
+print('Not_primes:', not_primes)
