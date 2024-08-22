@@ -1,19 +1,15 @@
-numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
-primes = []
-not_primes = []
-for i in numbers:
-    is_prime = True
-    if i == 1:
-        continue
-    for j in range(2, i):
-        if i % j == 0:
-            is_prime = False
-            break
-    if is_prime:
-        primes.append(i)
-    else:
-        not_primes.append(i)
-
-
-print('Primes:', primes)
-print('Not_primes:', not_primes)
+calls = 0
+def count_calls():
+    global calls
+    calls += 1
+def string_info(string):
+    count_calls()
+    return (len(string),string.upper(), string.lower())
+def is_contains(string, list_to_search):
+    count_calls()
+    return string.upper() in [s.upper() for s in list_to_search]
+print(string_info('Capybara'))
+print(string_info('Armageddon'))
+print(is_contains('Urban', ['ban', 'BaNaN', 'urBAN'])) # Urban ~ urBAN
+print(is_contains('cycle', ['recycling', 'cyclic'])) # No matches
+print(calls)
